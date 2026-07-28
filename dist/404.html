@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<title>Not Found</title>
+</head>
+<body>
+<script>
+(function(){
+  try {
+    var preferredHost = "auto";
+    var h = location.hostname;
+    var targetHost = h;
+    if (preferredHost === 'www') { if (!/^www\./i.test(h)) targetHost = 'www.' + h; }
+    if (preferredHost === 'nonwww') { if (/^www\./i.test(h)) targetHost = h.replace(/^www\./i,''); }
+    var url = location.protocol + "//" + targetHost + "/";
+    try {
+      var m = document.querySelector("meta[name=\"pg-rdr\"]");
+      if (m) { m.setAttribute("content", "0;url=" + url); }
+    } catch(e) {}
+    location.replace(url);
+  } catch(e) {}
+})();
+</script>
+
+<p>Not found. Redirecting to homepage...</p>
+</body>
+</html>
